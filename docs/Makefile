@@ -25,7 +25,7 @@ docs:
 # Upload the documentation to Read the Docs
 upload:
     # Authenticate with Read the Docs
-    readthedocs-cli login --token=YOUR_TOKEN
+    readthedocs-cli login --token=39f26421dc105e0503639fc73f0069bf40f4e9d8
     # Upload the documentation
     readthedocs-cli upload $(PROJECT_NAME)
 
