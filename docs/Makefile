@@ -1,5 +1,5 @@
 # Define the target directory for the generated documentation
-DOCS_DIR = docs
+DOCS_DIR = docs1
 
 # Define the name of the virtual environment for Sphinx
 SPHINX_VENV = $(DOCS_DIR)/sphinx_venv
@@ -8,17 +8,14 @@ SPHINX_VENV = $(DOCS_DIR)/sphinx_venv
 PROJECT_NAME = my_django_project
 
 # Define the location of the requirements file
-REQUIREMENTS_FILE = $(DOCS_DIR)/requirements.txt
+REQUIREMENTS_FILE = docs/requirements.txt
 
 .PHONY: docs
 
 # Generate the documentation
 docs: $(SPHINX_VENV)
-	# Activate the virtual environment
 	. $(SPHINX_VENV)/bin/activate && \
-		# Install Sphinx and the necessary dependencies
 		pip install -r $(REQUIREMENTS_FILE) && \
-		# Generate the documentation
 		cd $(DOCS_DIR) && make html
 
 $(SPHINX_VENV):
