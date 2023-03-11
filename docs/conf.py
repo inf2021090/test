@@ -3,8 +3,23 @@ import os
 import sys
 import django
 
+# Import the extensions
+import sphinx.ext.autodoc
+import sphinx.ext.napoleon
+
+# Configure the extensions
+extensions = [
+    'sphinx.ext.autodoc',
+    'sphinx.ext.napoleon',
+]
+
+# Configure the napoleon extension to parse Google-style docstrings
+napoleon_google_docstring = True
+napoleon_numpy_docstring = False
+
+
 sys.path.insert(0, os.path.abspath('..'))
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'my_django_project.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'texturetGen.settings')
 django.setup()
 
 # Project information
